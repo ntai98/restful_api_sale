@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="banhang" Class="banhangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-NOKN7RM\SQLEXPRESS;Initial Catalog=banhang;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="banhangConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.loaihang" Member="loaihangs">
+    <Type Name="loaihang">
+      <Column Name="maloai" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenloai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.chitietdonhang" Member="chitietdonhangs">
+    <Type Name="chitietdonhang">
+      <Column Name="masodh" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mahang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="giadathang1sp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.noibac" Member="noibacs">
+    <Type Name="noibac">
+      <Column Name="thutu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mahang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.nhomhang" Member="nhomhangs">
+    <Type Name="nhomhang">
+      <Column Name="maloai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="manhom" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tennhom" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.donhang" Member="donhangs">
+    <Type Name="donhang">
+      <Column Name="masodh" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tkkh" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="tknv1" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="tknv2" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ngaydathang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="diachinhanhang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="tinhtrang" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ghichu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.giohang" Member="giohangs">
+    <Type Name="giohang">
+      <Column Name="tkkh" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mahang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="soluong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.nhavien" Member="nhaviens">
+    <Type Name="nhavien">
+      <Column Name="tknv" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mknv" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="hotennv" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="gioitinhnv" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="diachinv" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sdtnv" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cmndnv" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.hanghoa" Member="hanghoas">
+    <Type Name="hanghoa">
+      <Column Name="mahang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="maloai" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="manhom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tenhang" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hinh" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="mota" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.khachhang" Member="khachhangs">
+    <Type Name="khachhang">
+      <Column Name="tkkh" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mkkh" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="hotenkh" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinhkh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="diachikh" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="sdtkh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cmndkh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
